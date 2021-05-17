@@ -1,0 +1,260 @@
+---
+editor_options:
+  chunk_output_type: console
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r classdefdata, eval = T, echo=FALSE, warning=FALSE, message=FALSE}
+require(leaflet)
+require(leaflet.extras)
+require(sf)
+require(htmltools)
+
+if (exists("fig_create_99")) fig_create <- fig_create_99 else fig_create <- TRUE
+if (exists("fig_fromfile_99")) fig_fromfile <- fig_fromfile_99 else fig_fromfile <- FALSE
+
+if (exists(paste0("islatexout"))) islatexout <- get(paste0("islatexout")) else islatexout <- FALSE
+```
+
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak\n")
+cat("\\ChapterBeginPage\n")
+cat("\\pagebreak\n")
+```
+
+
+# Appendix {#appendix}
+
+## Country classification by development stage
+
+```{r c99-classdeftable, eval = TRUE, echo = FALSE, warning=FALSE, message=FALSE}
+
+df_groups <- c("IND", "EIE", "DEVOT", "LDC")
+df <- country[country$ACode %in% df_groups, ]
+
+# Define tables countries per development status
+df_tables <- lapply(df_groups, function(x) {
+  a <- df[df$ACode == x, ]$CDesc
+  length(a) <- prod(dim(matrix(a, ncol = 3)))
+  matrix(a, ncol = 3)
+})
+names(df_tables) <- df_groups
+``` 
+
+
+```{r c99-classdefmap, eval = TRUE, echo=FALSE, fig.cap= "Country classification by development stage", fig.scap = "Country classification by development stage", out.width = '100%', fig.fullwidth=TRUE, fig.margin = FALSE, warning=FALSE, message=FALSE}
+###### WORLDMAP Overview
+if (fig_create) {
+  unido_shape <- merge(unido_shapefile,
+    df,
+    by = "Ccode",
+    all.x = TRUE
+  )
+}
+unido_leaflet1(
+  unido_shape = unido_shape,
+  categoric_var = unido_shape$ADesc,
+  categoric_var_title = "Development stage",
+  categoric_var_levels = factor(levels(as.factor(unido_shape$ADesc)),
+    levels =
+      c(
+        "Industrialized Economies",
+        "Emerging Industrial Economies <incl. China>",
+        "Other Developing Economies",
+        "Least Developed Countries"
+      )
+  ),
+  label = unido_shape$CDesc.y,
+  popup_text = paste("", unido_shape$CDesc.y, "<br/>", unido_shape$ADesc),
+  colorpal = unido_color_palette[[4]],
+  fig_create = fig_create,
+  fig_name = "classdefmap",
+  out_device = "png",
+  fig_fromfile = fig_fromfile,
+  fig_width = 650,
+  fig_height = 500
+)
+``` 
+.
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak")
+```
+
+```{r c99-INDtab, eval = T, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE}
+erg_table <- "IND"
+erg <- get("df_tables")[[erg_table]]
+kable_unido(erg, caption = unique(df[df$ACode == erg_table, ]$ADesc))
+```
+
+```{r c99-EIEtab, eval = T, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE}
+erg_table <- "EIE"
+erg <- get("df_tables")[[erg_table]]
+kable_unido(erg, caption = unique(df[df$ACode == erg_table, ]$ADesc))
+```
+
+```{r c99-DEVOTtab, eval = T, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE}
+erg_table <- "DEVOT"
+erg <- get("df_tables")[[erg_table]]
+kable_unido(erg, caption = unique(df[df$ACode == erg_table, ]$ADesc))
+```
+
+```{r c99-LDCtab, eval = T, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE}
+erg_table <- "LDC"
+erg <- get("df_tables")[[erg_table]]
+kable_unido(erg, caption = unique(df[df$ACode == erg_table, ]$ADesc))
+```
+.
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\clearpage\\pagebreak")
+```
+
+## Countries by major regions
+
+```{r, eval = TRUE, echo = FALSE, warning=FALSE, message=FALSE}
+
+df_groups <- c("937", "957", "962", "972", "982", "EURI", "EURD", "ESEAI", "WAI")
+
+df <- country[country$ACode %in% df_groups, ]
+
+# Define tables countries per region
+df_tables <- lapply(df_groups, function(x) {
+  a <- df[df$ACode == x, ]$CDesc
+  length(a) <- prod(dim(matrix(a, ncol = 4)))
+  matrix(a, ncol = 4)
+})
+names(df_tables) <- df_groups
+```
+
+```{r c99-classmapregions, eval = TRUE, echo=FALSE, fig.cap= "Country classification by major regions", out.width = '100%', fig.fullwidth=T, fig.margin = FALSE, warning=FALSE, message=FALSE}
+###### WORLDMAP Overview
+if (fig_create) {
+  unido_shape <- merge(unido_shapefile,
+    df,
+    by = "Ccode",
+    all.x = TRUE
+  )
+
+  unido_shape$ADesc <- gsub("Northern America", "Northern America <Industrialized>", unido_shape$ADesc)
+  unido_shape$ADesc <- gsub(">", ")", gsub("<", "(", unido_shape$ADesc))
+}
+unido_leaflet1(
+  unido_shape = unido_shape,
+  categoric_var = unido_shape$ADesc,
+  categoric_var_title = "Major regions",
+  categoric_var_levels = factor(levels(as.factor(unido_shape$ADesc)),
+    levels =
+      c(
+        "Europe (Industrialized)",
+        "Northern America (Industrialized)",
+        "Asia & Pacific",
+        "Eastern and South-eastern Asia (Industrialized)",
+        "Western Asia (Industrialized)",
+        "Others (Industrialized)",
+
+        "Africa (Developing & EIEs)",
+        "Asia & Pacific (Developing & EIEs)",
+        "Europe (Developing & EIEs)",
+        "Latin America & the Caribbean (Developing & EIEs)"
+      )
+  ),
+  label = unido_shape$CDesc.y,
+  popup_text = paste("", unido_shape$CDesc.y, "<br/>", unido_shape$ADesc),
+  colorpal = unido_color_palette[[8]],
+  fig_create = fig_create,
+  fig_name = "classmapregions",
+  set_lat = 62,
+  set_zoom = 1,
+  out_device = "png",
+  fig_fromfile = fig_fromfile,
+  fig_width = 650,
+  fig_height = 500
+)
+```
+
+```{r , eval = F, echo=FALSE, warning=FALSE, message=FALSE}
+text_in <- paste0("```{r , eval = T, echo=FALSE, warning=FALSE, message=FALSE}\nerg_table<- '", df_groups, "'\n erg <- get('df_tables')[[erg_table]]\nkable_unido(erg, booktabs = TRUE, linesep = '', caption = unique(df[df$ACode == erg_table, 'ADesc'])) %>%  kable_styling(font_size = tab_size)\n```")
+eval(parse(text = text_in))
+```
+.
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak")
+```
+
+## Country classification by income group
+```{r, eval = TRUE, echo = FALSE, warning=FALSE, message=FALSE}
+
+df_groups <- c("907", "909", "910", "911")
+df <- country[country$ACode %in% df_groups, ]
+
+# Define tables countries per development status
+df_tables <- lapply(df_groups, function(x) {
+  a <- df[df$ACode == x, ]$CDesc
+  length(a) <- prod(dim(matrix(a, ncol = 3)))
+  matrix(a, ncol = 3)
+})
+names(df_tables) <- df_groups
+``` 
+
+
+```{r c99-classmapincome, eval = TRUE, echo=FALSE, fig.cap= "Country classification by income group", out.width = '100%', fig.fullwidth=T, fig.margin = FALSE, warning=FALSE, message=FALSE}
+###### WORLDMAP Overview
+if (fig_create) {
+  unido_shape <- merge(unido_shapefile,
+    df,
+    by = "Ccode",
+    all.x = TRUE
+  )
+}
+unido_leaflet1(
+  unido_shape = unido_shape,
+  categoric_var = unido_shape$ADesc,
+  categoric_var_title = "Income group",
+  categoric_var_levels = factor(levels(as.factor(unido_shape$ADesc)),
+    levels =
+      c(
+        "Low Income",
+        "Lower Middle Income",
+        "Upper Middle Income",
+        "High Income"
+      )
+  ),
+  label = unido_shape$CDesc.y,
+  popup_text = paste("", unido_shape$CDesc.y, "<br/>", unido_shape$ADesc),
+  colorpal = unido_color_palette[[4]],
+  fig_create = fig_create,
+  fig_name = "classmapincome",
+  out_device = "png",
+  fig_fromfile = fig_fromfile,
+  fig_width = 650,
+  fig_height = 500
+)
+``` 
+
+.
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak")
+```
+
+## ISIC Rev. 4 divisions and technological intensity
+
+
+```{r c99-ISICtab, eval = T, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE}
+erg <- isicR4[isicR4$lvl %in% c(1, 2), c(1, 2)]
+erg$Technology <- isictech$Description[match(erg$Code, isictech$Code)]
+kable_unido(erg, caption = "ISIC Rev. 4 divisions and technological intensity") %>%
+  column_spec(2, width = "6cm")
+```
+
+.
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak")
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\pagebreak\n")
+cat("\\BookEndPage\n")
+```

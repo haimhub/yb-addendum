@@ -1,0 +1,1616 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+  openany, nofonts]{tufte-book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={International Yearbook of Industrial Statistics 2021},
+  pdfauthor={UNIDO Statistics Division (Status: 2021-05-17, marti)},
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change some parameters to be inline with our intended visual identiy
+% 
+% Create HaitzmannM::03/02/2021
+%
+% in progress
+%
+% indicate major changes, inclusions with initials and date
+% XX::DDMMYYYY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%additional packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{xcolor} % for colour
+%\usepackage{background}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{animate}
+
+\usepackage{fontawesome5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%visual id color logo chapter header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{unidoblue}{RGB}{0,156,220}
+%\definecolor{unidosuppl}{RGB}{220, 64, 0} %#alternative Maroon hexadecimal color #800000 {128,0,0}
+\definecolor{unidosuppl}{RGB}{128,0,0} %#alternative Maroon hexadecimal color #800000 {128,0,0}
+
+\newsavebox{\unidologo}
+\savebox{\unidologo}{\includegraphics[]{img/Unido_EN_Light_Blue.png}}
+
+\newsavebox{\unidologowhite}
+\savebox{\unidologowhite}{\includegraphics[]{img/Unido_EN_White.png}}
+
+\newsavebox{\unidologoblack}
+\savebox{\unidologoblack}{\includegraphics[]{img/Unido_EN_Black.png}}
+
+%horizontal blue line
+\newcommand*{\HRule}{\color{unidoblue}\hrule width 1\textwidth height 2pt} % <===========================
+%\newcommand{\HRule}{\color{unidoblue}\rule{\textwidth}{0.1mm}}
+
+\usepackage{fontspec}
+%\setmainfont{Calibri}
+%\setmainfont[Path=/usr/share/fonts/truetype/calibri/,
+%    BoldItalicFont=calibriz.ttf,
+%    BoldFont      =calibrib.ttf,
+%    ItalicFont    =calibrii.ttf]{calibri.ttf}
+
+%\usepackage{FiraSans}
+%%DOES NOT WORK, Meta Pro NOrm not recognized
+% UNIDO Font family
+\usepackage[abspath]{currfile}
+\setmainfont[
+  %Path=\currfileabsdir, 
+  %Path=H:/WORK/QUEST/Analysis/YB-2021-addendum/meta-pro-cufonfonts/
+  Path = ./meta-pro-cufonfonts/,
+  Renderer=Basic, Ligatures={TeX},Scale=MatchUppercase,
+  %UprightFont    = meta-pro-cufonfonts/FFMetaProCondRg.TTF,
+  ItalicFont     = FFMetaProCondRgIt.TTF,
+  BoldFont       = FFMetaProCondBd.TTF,
+  BoldItalicFont = FFMetaProCondBdIt.TTF,
+  SmallCapsFont  = FFMetaProCondRg.TTF,
+  SmallCapsFeatures= {Letters=SmallCaps}
+  ]{FFMetaProCondRg}
+%\setmainfont[Path=C:/Users/marti/Documents/Arbeit/UNIDO/H/WORK/QUEST/Analysis/YB-2021-addendum/meta-pro-cufonfonts/]{FFMetaProCondRg.TTF}
+%%%%
+ %need for xelatex in combinaitn with tufte pdf
+  % Set up the spacing using fontspec features
+  \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+  \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+%%MetaPro does not have own SmallCaps, so use uppercase
+\renewcommand{\textsc}[1]{\smallcapsspacing{\textsmallcaps{#1}}}
+\renewcommand{\smallcaps}[1]{\smallcapsspacing{\scshape\MakeTextUppercase{#1}}}
+
+%change section heder format
+% add numbers to chapters, sections, subsections
+\setcounter{secnumdepth}{2}
+
+% chapter format
+\titleformat{\chapter}%
+  {\huge\rmfamily\itshape\color{unidoblue}}% format applied to label+text
+  {\llap{\colorbox{unidoblue}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
+  {2pt}% horizontal separation between label and title body
+  {}% before the title body
+  [\HRule]% after the title body
+
+% section format
+\titleformat{\section}%
+  {\normalfont\Large\itshape\color{unidoblue}}% format applied to label+text
+  {\llap{\colorbox{unidoblue}{\parbox{1.5cm}{\hfill\color{white}\thesection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  [\HRule]% after the title body
+
+% subsection format
+\titleformat{\subsection}%
+  {\normalfont\large\itshape\color{unidoblue}}% format applied to label+text
+  {\llap{\colorbox{unidoblue}{\parbox{1.5cm}{\hfill\color{white}\thesubsection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  [\HRule]% after the title body
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ADAPT TITLEPAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% additional Picture on titlepage
+\newsavebox{\titlepagepic}
+\savebox{\titlepagepic}{\includegraphics[width=\linewidth,height=0.3\paperheight]{img/imagetitlepage_maroon.pdf}}
+
+%%%%Titlepagearea style logo and area
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}% [0]
+\def\TitlePageAreaLogoLine{%
+  %%%%Blue Line at top paperwidht
+  \tikz [remember picture,overlay]%
+    \draw [draw=white, fill={rgb,255:red,0; green,156; blue,220}]($(current page.south west)!0.9!(current page.north west)$) rectangle  ($(current page.south east)!0.895!(current page.north east)$);
+  %%%%LOGO topleft corneer
+  \tikz [remember picture,overlay]%
+    \node [anchor=north west] (logo) at (-2cm,2.5cm) {\resizebox{!}{2cm}{\usebox{\unidologo}}};
+ %%%%shaded area top
+  \tikz [remember picture,overlay]%
+    \shade [top color={rgb,255:red,0; green,156; blue,220},bottom color=white] ($(current page.south west)!0.89!(current page.north west)$) rectangle ($(current page.south east)!0.7!(current page.north east)$);   
+ %%%%titlepic 
+  \tikz [remember picture,overlay]%
+    \node [anchor=south west] (titlepic) at ($(current page.south west)!0.08!(current page.north west)$) {\resizebox{\paperwidth}{!}{\usebox{\titlepagepic}}};
+  %%%%bottom area 
+  \tikz [remember picture,overlay]%
+        \shade [bottom color={rgb,255:red,0; green,156; blue,220},top color=white]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!0.1!(current page.north east)$);
+%    \draw [draw={rgb,255:red,0; green,156; blue,220}, fill={rgb,255:red,0; green,156; blue,220}]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!0.1!(current page.north east)$);
+  %%%%bottom area text
+  \tikz [remember picture,overlay]%
+    \node at (current page.south) [%
+        draw={rgb,255:red,0; green,156; blue,220},
+        inner sep=14pt,
+        fill={rgb,255:red,0; green,156; blue,220},
+        fill opacity=0.01,
+        text=white,
+        text opacity = 1,
+        draw opacity = 0.01,
+        above=0.5cm,
+        font=\sffamily\Large
+    ] {INCLUSIVE AND SUSTAINABLE INDUSTRIAL DEVELOPMENT};
+
+ }
+
+
+%%%%%%%%%%%%%%%%%%%
+%Book end page 
+\usetikzlibrary{calc,positioning}% [0]
+\def\TitlePageAreaPagePlus{%
+%%%%logo 
+  \tikz [remember picture,overlay]%
+    \node [anchor=south west] (logo) at (-1cm, -23.5cm) {\resizebox{!}{2cm}{\usebox{\unidologoblack}}};
+}
+
+
+%%%%%%%%Adapt titlepage
+
+\newcommand{\plainsubtitle}{}%     plain-text-only subtitle
+\newcommand{\subtitle}[1]{%
+  \gdef\@subtitle{#1}%
+  \renewcommand{\plainsubtitle}{#1}% use provided plain-text title
+  \ifthenelse{\isundefined{\hypersetup}}%
+    {}% hyperref is not loaded; do nothing
+    {\hypersetup{pdftitle={\plaintitle: \plainsubtitle{}}}}% set the PDF metadata title
+}
+
+\renewcommand{\maketitlepage}[0]{%
+
+\cleardoublepage%
+{%
+\sffamily%
+\TitlePageAreaLogoLine
+%\noindent\makebox[\paperwidth]{\color{unidoblue}\rule{\paperwidth}{2pt}} 
+%\resizebox{!}{2cm}{\usebox{\unidologo}}
+%\vspace{0.1cm}
+%\HRule  
+\vspace{1cm}
+  \begin{fullwidth}%
+ \fontsize{16}{20}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\thanklessauthor}}%
+  \vspace{5.5pc}%
+  \fontsize{32}{40}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\thanklesstitle}}%
+  \vspace{3pc}%
+  \fontsize{20}{28}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\plainsubtitle}}%
+  \vfill%
+  \fontsize{14}{16}\selectfont\par\noindent\allcaps{\thanklesspublisher}%
+  %\vspace{0.1pc}%
+  %\noindent\resizebox{!}{9cm}{\usebox{\titlepagepic}}
+\end{fullwidth}%
+
+\thispagestyle{empty}%
+
+%%%%%add empty page
+\newpage\null\thispagestyle{empty}\newpage
+
+%%%%%add a third titlepage
+\TitlePageAreaPagePlus
+\sffamily
+  \begin{fullwidth}%
+ \fontsize{16}{20}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\thanklessauthor}}%
+  \vspace{5.5pc}%
+  \fontsize{32}{40}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\thanklesstitle}}%
+  \vspace{3pc}%
+  \fontsize{20}{28}\selectfont\par\noindent\textcolor{darkgray}{\allcaps{\plainsubtitle}}%
+\end{fullwidth}%
+\thispagestyle{empty}
+%%
+\newpage
+%%%%% add a page with Disclaimer:
+
+\singlespacing
+{\normalfont\Large\itshape\color{unidoblue}\paragraph{About this publication}\hspace*{\fill} \\
+\normalfont\color{black}{
+\begin{fullwidth}
+The International Yearbook of Industrial Statistics published by UNIDO contains a wealth of information on the level, structure and growth of world manufacturing. Data are presented at the most detailed level of 155 manufacturing industries. While these data are used by researchers to carry out in-depth economic analyses of structural transformation, many users have requested more concise statistical information on overall growth trends and the structure of global manufacturing.
+
+\noindent This publication serves as an addendum to the International Yearbook of Industrial Statistics 2021 and provides some important statistical information on global manufacturing. The publication is compiled from data published in the Yearbook and other data products of UNIDO Statistics.
+
+\noindent The publication is compiled and disseminated by UNIDO Statistics.
+\end{fullwidth}
+}
+}
+\vspace{1pc}
+{\normalfont\Large\itshape\color{unidoblue}\paragraph{Acknowledgements}\hspace*{\fill} \\
+\normalfont\color{black}{
+\begin{fullwidth}
+Add here all necessary acknowledgements.
+\end{fullwidth}
+}
+}
+\vspace*{\fill}
+
+%\paragraph{Disclaimer}\hspace*{\fill} \\
+{\small\normalfont\color{black}{ 
+%\begin{justify}
+\begin{fullwidth}
+Copyright \textcopyright 2021 United Nations Industrial Development Organization
+
+\noindent The designations employed and the presentation of the material in this document do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations Industrial Development Organization (UNIDO) concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries, or its economic system or degree of development.
+
+\noindent Designations such as „developed“, „industrialized“ and „developing“ are intended for statistical convenience and do not necessarily express a judgment about the stage reached by a particular country or area in the development process. Mention of firm names or commercial products does not constitute an endorsement by UNIDO.
+
+\noindent Material in this publication may be freely quoted or reprinted, but acknowledgement is requested, together with a copy of the publication containing the quotation or reprint.
+
+\noindent For reference and citation, please use: United Nations Industrial Development Organization, 2021. TITLE.Vienna.
+\end{fullwidth}
+%\end{justify}
+}}
+}
+
+\thispagestyle{empty}
+\clearpage
+
+}
+%%%%%%%%
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ADAPT TOC, List of Figure, List of Table Styling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@table{\@dottedtocline{1}{1.5em}{2.3em}}
+
+\let\stdl@figure\l@figure
+\renewcommand*{\l@figure}[2]{%
+  \stdl@figure{\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}}
+
+\let\stdl@table\l@table
+\renewcommand*{\l@table}[2]{%
+  \stdl@table{\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}}
+
+\renewcommand*\contentsname{Table of Contents}                  %% redefine the name of the table of contents
+
+\renewcommand*\l@chapter{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{2.3em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+
+
+\let\stdl@chapter\l@chapter
+\renewcommand*{\l@chapter}[2]{%
+  \stdl@chapter{\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}}
+\let\stdl@section\l@section
+\renewcommand*{\l@section}[2]{%
+  \stdl@section{\hspace{0.3cm}\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}}
+\let\stdl@subsection\l@subsection
+\renewcommand*{\l@subsection}[2]{%
+  \stdl@subsection{\hspace{0.3cm}\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}}
+\renewcommand*{\l@subsubsection}[2]{% 
+  \stdl@subsection{\hspace{0.3cm}\textcolor{unidosuppl}{#1}}{\textcolor{unidoblue}{#2}}} 
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Chapter begin page 
+\usetikzlibrary{calc,positioning}% [0]
+\def\ChapterBeginPage{%
+   \tikz [remember picture,overlay]%
+        \shade [bottom color={rgb,255:red,0; green,156; blue,220},top color=white]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!1!(current page.north east)$);
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Chapter end page 
+\usetikzlibrary{calc,positioning}% [0]
+\def\ChapterEndPage{%
+\tikz [remember picture,overlay]%
+    \node [anchor=south] (titlepic) at ($(current page.south)!0.3!(current page.north)$){\resizebox{0.8\paperwidth}{!}{\includegraphics[]{img/sample_image.png}}};
+    %{\resizebox{\paperwidth}{!}{\usebox{\titlepagepic}}};
+    %{\includegraphics[width=0.8\paperwidth,height=0.9\paperheight]{img/creating-infographics.png}};
+    \tikz [remember picture,overlay]%
+    \node at (current page.north) [%
+        draw={rgb,255:red,0; green,156; blue,220},
+        inner sep=18pt,
+        %fill={rgb,255:red,0; green,156; blue,220},
+text=red,
+        below=3cm,
+        font=\sffamily\Huge
+    ] {??END OF CHAPTER INFOGRAPHICS OR INFOBOX??};
+   %%%%bottom area 
+  \tikz [remember picture,overlay]%
+        \shade [bottom color={rgb,255:red,0; green,156; blue,220},top color=white]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!0.1!(current page.north east)$);
+% \tikz [remember picture,overlay]%
+%    \draw [draw={rgb,255:red,0; green,156; blue,220}, fill={rgb,255:red,0; green,156; blue,220}]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!0.1!(current page.north east)$);
+ 
+  \tikz [remember picture,overlay]%
+    \node at (current page.south) [%
+        draw={rgb,255:red,0; green,156; blue,220},
+        inner sep=14pt,
+        fill={rgb,255:red,0; green,156; blue,220},
+        fill opacity=0.01,
+        text=white,
+        text opacity = 1,
+        draw opacity = 0.01,
+        above=0.5cm,
+        font=\sffamily\Large
+    ] {END OF CHAPTER};
+
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Book end page 
+\usetikzlibrary{calc,positioning}% [0]
+\def\BookEndPage{%
+ %%%%shaded area
+  \tikz [remember picture,overlay]%
+        \shade [bottom color={rgb,255:red,0; green,156; blue,220},top color=white]($(current page.south west)!0!(current page.north west)$) rectangle  ($(current page.south east)!1!(current page.north east)$);
+
+%\tikz [remember picture,overlay]%
+%    \node [anchor=south west] (titlepic) at ($(current page.south west)!0.2!(current page.north west)$){\resizebox{\paperwidth}{!}{\usebox{\titlepagepic}}};
+
+ %%%%logo 
+  \tikz [remember picture,overlay]%
+    \node [anchor=south west] (logo) at (-1cm, -21.5cm) {\resizebox{!}{2cm}{\usebox{\unidologowhite}}};
+   %%%%bottom area text
+  \tikz [remember picture,overlay]%
+    \node [anchor=south west] (text) at (0.9cm, -23.2cm) [%
+        draw={rgb,255:red,0; green,156; blue,220},
+        inner sep=14pt,
+        fill={rgb,255:red,0; green,156; blue,220},
+        fill opacity=0.01,
+        text=white,
+        text opacity = 1,
+        draw opacity = 0.01,
+        %below=4cm,
+        %right=2cm,
+        font=\sffamily
+    ] {\begin{tabular}{l}
+    Vienna International Centre · P.O. Box 300 · 1400 Vienna · Austria  \\ 
+    Tel.: (+43-1) 26026-o · E-mail: info@unido.org\\
+    www.unido.org
+\end{tabular}};
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hyphenation of stuborn words
+\hyphenation{INDSTAT}
+
+\hyphenation{acad-e-my acad-e-mies af-ter-thought anom-aly anom-alies
+an-ti-deriv-a-tive an-tin-o-my an-tin-o-mies apoth-e-o-ses
+apoth-e-o-sis ap-pen-dix ar-che-typ-al as-sign-a-ble as-sist-ant-ship
+as-ymp-tot-ic asyn-chro-nous at-trib-uted at-trib-ut-able bank-rupt
+bank-rupt-cy bi-dif-fer-en-tial blue-print busier busiest
+cat-a-stroph-ic cat-a-stroph-i-cally co-authoring con-gress cross-hatched data-base
+de-fin-i-tive de-riv-a-tive dis-trib-ute dri-ver dri-vers eco-nom-ics
+econ-o-mist elit-ist equi-vari-ant ex-quis-ite ex-tra-or-di-nary
+flow-chart for-mi-da-ble forth-right friv-o-lous ge-o-des-ic
+ge-o-det-ic geo-met-ric griev-ance griev-ous griev-ous-ly
+hexa-dec-i-mal ho-lo-no-my ho-mo-thetic ideals idio-syn-crasy
+in-fin-ite-ly in-fin-i-tes-i-mal ir-rev-o-ca-ble key-stroke
+lam-en-ta-ble light-weight mal-a-prop-ism man-u-script mar-gin-al
+meta-bol-ic me-tab-o-lism meta-lan-guage me-trop-o-lis
+met-ro-pol-i-tan mi-nut-est mol-e-cule mono-chrome mono-pole
+mo-nop-oly mono-spline mo-not-o-nous mul-ti-fac-eted mul-ti-plic-able
+non-euclid-ean non-iso-mor-phic non-smooth par-a-digm par-a-bol-ic
+pa-rab-o-loid pa-ram-e-trize para-mount pen-ta-gon phe-nom-e-non
+post-script pre-am-ble pro-ce-dur-al pro-hib-i-tive pro-hib-i-tive-ly
+pseu-do-dif-fer-en-tial pseu-do-fi-nite pseu-do-nym qua-drat-ic
+quad-ra-ture qua-si-smooth qua-si-sta-tion-ary qua-si-tri-an-gu-lar
+quin-tes-sence quin-tes-sen-tial re-arrange-ment rec-tan-gle
+ret-ri-bu-tion retro-fit retro-fit-ted right-eous right-eous-ness
+ro-bot ro-bot-ics sched-ul-ing se-mes-ter semi-def-i-nite
+semi-ho-mo-thet-ic set-up se-vere-ly side-step sov-er-eign spe-cious
+spher-oid spher-oid-al star-tling star-tling-ly sta-tis-tics
+sto-chas-tic straight-est strange-ness strat-a-gem strong-hold
+sum-ma-ble symp-to-matic syn-chro-nous topo-graph-i-cal tra-vers-a-ble
+tra-ver-sal tra-ver-sals treach-ery turn-around un-at-tached
+un-err-ing-ly white-space wide-spread wing-spread wretch-ed
+wretch-ed-ly Eng-lish Euler-ian Feb-ru-ary Gauss-ian
+Hamil-ton-ian Her-mit-ian Jan-u-ary Japan-ese Kor-te-weg
+Le-gendre Mar-kov-ian Noe-ther-ian No-vem-ber Rie-mann-ian Sep-tem-ber}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{International Yearbook of Industrial Statistics 2021}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Addendum - Visual companion}
+\author{UNIDO Statistics Division (Status: 2021-05-17, marti)}
+\date{2021-05-17}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\listoftables
+\listoffigures
+\ChapterBeginPage
+\pagebreak
+
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+INTERNAL in draft this draft version, a short description of possible figure and text positions in this template:
+
+\begin{itemize}
+\tightlist
+\item
+  margin figure:
+
+  \begin{marginfigure}
+  \includegraphics[width=1\linewidth]{./img/GROUP_WORLDwintri.png} \caption[Margin Figure]{Margin Figure}\label{fig:unnamed-chunk-7}
+  \end{marginfigure}
+\end{itemize}
+
+\vspace{1.5cm}
+
+\begin{itemize}
+\tightlist
+\item
+  standard text:
+\end{itemize}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+\begin{itemize}
+\tightlist
+\item
+  Margin text
+  \marginnote{This is a margin note. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.}
+\end{itemize}
+
+\vspace{0.25cm}
+
+\begin{itemize}
+\tightlist
+\item
+  standard sized figure:
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{./img/MVA2020share.png} \caption[This is a standard sized figure]{This is a standard sized figure.}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  full width figure:
+\end{itemize}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./img/ISIC2devxreg.png} \caption[This is a full width figure]{This is a full width figure}\label{fig:unnamed-chunk-11}
+\end{figure*}
+
+\hypertarget{proposed-structure-mail-fernando}{%
+\section*{Proposed structure (mail Fernando)}\label{proposed-structure-mail-fernando}}
+\addcontentsline{toc}{section}{Proposed structure (mail Fernando)}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  Introduction
+\item
+  Recent trends in world manufacturing
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Historical evolution of global manufacturing (growth rates, MVA per capita, share of GDP -- long time series)
+\item
+  Recent trends (growth trends, share of GDP, incl.~nowcasting and possibly quarterly/monthly IIP data)
+\item
+  Employment in manufacturing (and productivity)
+\item
+  Trade of manufactured products
+\item
+  Analysis of recent events, shocks, developments, policies affecting global manufacturing
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The distribution of manufacturing in the world
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Distribution of world total MVA (current and evolution through time)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    By industrialization groups
+  \item
+    By major geographical areas (continents)
+  \item
+    By income groups
+  \item
+    By ``special'' groups (LLDCS, SIDS, subregional bodies, trade blocks, etc.)
+  \end{itemize}
+\item
+  Main production centers (current and evolution)
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Geographical analysis
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Recent trends and main changes (total MVA \& MVA per capita, levels and growth rates), best performers, etc. by geographical regions (mostly in production, but also trade)
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Industrial sectors
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Manufactured products by level of technological content
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Shares in total manufacturing production and trade through time
+  \item
+    Contributions by main country groups
+  \item
+    Highlights (for example, main contributions by category of product, countries that have moved the most in the technological content of their products)
+  \end{itemize}
+\item
+  Manufacturing industries (2-digit ISIC)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Shares in total manufacturing through time
+  \item
+    Contributions by main country groups
+  \item
+    Highlights (for example, leading economies by industry, countries that have moved the most in specific industries)
+  \item
+    Analysis of recent events, shocks, policies that have affected specific industries
+  \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Structural transformation
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Historical trends and recent developments in structural transformation indicators
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Share of MVA in GDP
+  \item
+    MVA per capita
+  \item
+    Share of MHT in total manufacturing
+  \end{itemize}
+\item
+  Emphasis on special groups: LDCs, LLDCs, SIDS, etc.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Indicators on ISID (evolving list)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Women and men in industry
+\item
+  Small firms in manufacturing productions
+\item
+  Environmental indicators
+\end{itemize}
+
+\hypertarget{recent}{%
+\chapter{Recent trends in world manufacturing}\label{recent}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-16-1.pdf} \end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-17-1.pdf} \end{marginfigure}
+
+\vspace*{-1.5cm}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Historical evolution of global manufacturing (growth rates, MVA per capita, share of GDP -- long time series)
+\item
+  Recent trends (growth trends, share of GDP, incl.~nowcasting and possibly quarterly/monthly IIP data)
+\item
+  Employment in manufacturing (and productivity)
+\item
+  Trade of manufactured products
+\item
+  Analysis of recent events, shocks, developments, policies affecting global manufacturing
+\end{itemize}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/MVAGR_GDPGR_WORLD_LONGSERIES.pdf} \caption[Development of MVA (bar) and GDP (line) over time]{Development of manufacturing value added (bar) and GDP (line) over time}\label{fig:c02-LONGSERIES}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{global-manufacturing-from-1990-to-2020}{%
+\section{Global manufacturing from 1990 to 2020}\label{global-manufacturing-from-1990-to-2020}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/MVA_waffle_INDDEV1.pdf} \includegraphics[width=1\linewidth]{./fig/SlopeAGGGROUP_INDDEV1.pdf} \caption[Change in MVA distribution]{Change in manufacturing value added distribution}\label{fig:c02-mvadist}
+\end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=0.5\linewidth]{./fig/SlopeAGGGROUP_INDDEV2.pdf} \includegraphics[width=0.5\linewidth]{./fig/CHINA_echart_mvacod_1990_2020.png} \includegraphics[width=0.5\linewidth]{./fig/SlopeAGGGROUP_INDREG.pdf} \includegraphics[width=0.5\linewidth]{./fig/SlopeAGGGROUP_DEVXREG.pdf} \caption[Manufacturing value added development for selected groups (shares in per cent)]{Manufacturing value added development for groups related to regions and stages of industrial development (shares in per cent)}\label{fig:c02-mvadev}
+\end{figure*}
+
+\pagebreak
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_WORLD_1990-2020.pdf} \end{figure*}
+
+\begin{figure*}
+\subfloat[1990\label{fig:c02-scatter-groups2-1}]{\includegraphics[width=1\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_INDDEV1_1990.pdf} }\newline\subfloat[2020\label{fig:c02-scatter-groups2-2}]{\includegraphics[width=1\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_INDDEV1_2020.pdf} }\caption[MVA per capita and MVA share for major development groups]{Manufacturing value added per capita and share in relation to GDP for major groups of industrial development}\label{fig:c02-scatter-groups2}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{employment}{%
+\section{Employment}\label{employment}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/EMP_waffle_gender_test.png} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{./img/sample_image.png} \caption[Sample Figure]{Sample Figure}\label{fig:unnamed-chunk-27}
+\end{figure}
+
+\pagebreak
+
+\hypertarget{trade-of-manufactured-products}{%
+\section{Trade of manufactured products}\label{trade-of-manufactured-products}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-29-1.pdf} \end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-30-1.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/ExportTech_GROUP_INDDEV4.pdf} \caption[Export structure by country groups]{Export structure by country groups}\label{fig:c02-exportstruct}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{recent-developments-in-focus}{%
+\section{Recent developments in focus}\label{recent-developments-in-focus}}
+
+~
+\marginnote{{\Huge \color{unidoblue} \faIcon{viruses}} {\huge \color{unidoblue} SARS-CoV-2 } \newline ...}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-33-1.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/QIIP_WORLD_LONGSERIES.pdf} \caption[Recent developmetn of seasonally adjusted QIIP]{Recent developmetn of seasonally adjusted QIIP}\label{fig:c02-qiip}
+\end{figure*}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/QIIP_COVID_Slope.pdf} \includegraphics[width=1\linewidth]{./fig/QIIP_COVID_tech.pdf} \caption[Recent developments according to QIIP]{Recent developments according to the Quarterly Index of Industrial Production (Base Weights refer to 2015)}\label{fig:c02-qiip-ext}
+\end{figure*}
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\hypertarget{MVAdist}{%
+\chapter{The distribution of world manufacturing value added}\label{MVAdist}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1.3\linewidth]{./fig/MVA_waffle_INDDEV2.pdf} \end{marginfigure}
+
+\vspace*{-1.5cm}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Distribution of world total MVA (current and evolution through time)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    By industrialization groups
+  \item
+    By major geographical areas (continents)
+  \item
+    By income groups
+  \item
+    By ``special'' groups (LLDCS, SIDS, subregional bodies, trade blocks, etc.)
+  \end{itemize}
+\item
+  Main production centers (current and evolution)
+\end{itemize}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/MVA_waffle_INDDEV4.pdf} \caption[Distribution of world manufacturing value added for selected years]{Distribution of world manufacturing value added for selected years}\label{fig:c03-inddev4-waffle}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{industrialized-economies}{%
+\section{Industrialized economies}\label{industrialized-economies}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./img/GROUP_INDwintri.png} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/MVA2020shareind.pdf} \caption[Industrialized economies: contribution to MVA, Year 2020]{Industrialized economies: contribution to manufacturing value added, Year 2020}\label{fig:c03-INDmva}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{developing-and-emerging-industrial-economies-incl.-china}{%
+\section{Developing and emerging industrial economies (incl.~China)}\label{developing-and-emerging-industrial-economies-incl.-china}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./img/GROUP_DEVwintri.png} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/MVA2020sharedev.pdf} \caption[Dev. and EIE: contribution to MVA, Year 2020]{Developing and emerging industrialized economies: contribution to manufacturing value added, Year 2020}\label{fig:c03-DEVmva}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{mva-by-income-groups}{%
+\section{MVA by income groups}\label{mva-by-income-groups}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1.3\linewidth]{./fig/classmapincome.png} \caption[Country classification by income group]{Country classification by income group}\label{fig:c03-INCmva}
+\end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=1.3\linewidth]{./fig/SlopeAGGGROUP_INC.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_INC_2020.pdf} \caption[MVA per capita and MVA share per income group, Year 2020]{Manufacturing value added per capita and share in relation to GDP per income group, Year 2020}\label{fig:c03-INC-scatter}
+\end{figure*}
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\hypertarget{geoanalysis}{%
+\chapter{Geographical analysis}\label{geoanalysis}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1.3\linewidth]{./fig/classmapregions.png} \end{marginfigure}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Recent trends and main changes (total MVA \& MVA per capita, levels and growth rates), best performers, etc. by geographical regions (mostly in production, but also trade)
+\end{itemize}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/MVA_waffle_continents.pdf} \caption[MVA by continents]{MVA by continents}\label{fig:c04-continent-mva}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{manufacturing-value-added-per-continent}{%
+\section{Manufacturing value added per continent}\label{manufacturing-value-added-per-continent}}
+
+~
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[1990\label{fig:c04-continent-mvapc-mvash-1}]{\includegraphics[width=0.85\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_CONTINENT_1990.pdf} }\newline\subfloat[2020\label{fig:c04-continent-mvapc-mvash-2}]{\includegraphics[width=0.85\linewidth]{./fig/Scatter_MVApc_MVAshare_GROUP_CONTINENT_2020.pdf} }\caption[MVApc and MVAshare by continent]{MVApc and MVAshare by continent}\label{fig:c04-continent-mvapc-mvash}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{manufacturing-value-added-per-capita}{%
+\section{Manufacturing value added per capita}\label{manufacturing-value-added-per-capita}}
+
+~
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/worldmvapc1990_2020.png} \caption[World MVA per capita in 2020 (circle color represents 1990 if changed)]{World MVA per capita in 2020 (circle color represents 1990 if changed)}\label{fig:c04-worldmavapc}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{trade-of-manufactured-products-1}{%
+\section{Trade of manufactured products}\label{trade-of-manufactured-products-1}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-58-1.pdf} \end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-59-1.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/ExportTech_GROUP_CONTINENT.pdf} \caption[Export structure by continent]{Export structure by continent}\label{fig:c04-continent-export}
+\end{figure*}
+
+\pagebreak
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\hypertarget{indsec}{%
+\chapter{Industrial sectors}\label{indsec}}
+
+\vspace*{-1.5cm}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Manufactured products by level of technological content
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Shares in total manufacturing production and trade through time
+  \item
+    Contributions by main country groups
+  \item
+    Highlights (for example, main contributions by category of product, countries that have moved the most in the technological content of their products)
+  \end{itemize}
+\item
+  Manufacturing industries (2-digit ISIC)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Shares in total manufacturing through time
+  \item
+    Contributions by main country groups
+  \item
+    Highlights (for example, leading economies by industry, countries that have moved the most in specific industries)
+  \item
+    Analysis of recent events, shocks, policies that have affected specific industries
+  \end{itemize}
+\end{itemize}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/ISIC2inddev.pdf} \caption[Industry Share by development status]{Industry Share by development status}\label{fig:c05-indshareINDDEV}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{industrialized-regions}{%
+\section{Industrialized regions}\label{industrialized-regions}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./img/GROUP_INDREGwintri.png} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/ISIC2indreg.pdf} \caption[Distribution of manufacturing value added among selected industries and industrialized regions]{Distribution of manufacturing value added among selected industries and industrialized regions}\label{fig:c05-indshareIND}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{northern-america-eastern-and-south-eastern-asia-europe}{%
+\subsection{Northern America, Eastern and South-eastern Asia, Europe}\label{northern-america-eastern-and-south-eastern-asia-europe}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2EURIESEAI937.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareINDsub1slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufEURIESEAI937Low-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareINDsub1slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufEURIESEAI937Medium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareINDsub1slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufEURIESEAI937Medium-high and high-technology.pdf} }\caption[Leading manufacturers in industrialized regions of Northern America, Eastern and South-eastern Asia, Europe per technological intensity (shares in per cent)]{Leading manufacturers in industrialized regions of Northern America, Eastern and South-eastern Asia, Europe per technological intensity (shares in per cent)}\label{fig:c05-indshareINDsub1slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{western-asia-and-other-industrialized-regions}{%
+\subsection{Western Asia and other industrialized regions}\label{western-asia-and-other-industrialized-regions}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2WAIOthers.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareINDsub2slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufWAIOthersLow-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareINDsub2slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufWAIOthersMedium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareINDsub2slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufWAIOthersMedium-high and high-technology.pdf} }\caption[Leading manufacturers in industrialized regions of Western Asia and Others per technological intensity (shares in per cent)]{Leading manufacturers in industrialized regions of Western Asia and Others per technological intensity (shares in per cent)}\label{fig:c05-indshareINDsub2slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{developing-regions}{%
+\section{Developing regions}\label{developing-regions}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./img/GROUP_DEVXREGwintri.png} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/ISIC2devxreg.pdf} \caption[Distribution of manufacturing value added among selected industries and developing regions]{Distribution of manufacturing value added among selected industries and developing regions}\label{fig:c05-indshareDEV}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{africa}{%
+\subsection{Africa}\label{africa}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2africa.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareDEVsub1slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufAFRICALow-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareDEVsub1slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufAFRICAMedium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareDEVsub1slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufAFRICAMedium-high and high-technology.pdf} }\caption[Leading manufacturers in developing countries in Africa per technological intensity (shares in per cent)]{Leading manufacturers in developing countries in Africa per technological intensity (shares in per cent)}\label{fig:c05-indshareDEVsub1slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{latin-america-and-the-caribbean}{%
+\subsection{Latin America and the Caribbean}\label{latin-america-and-the-caribbean}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2lamerica.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareDEVsub2slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuflamericaLow-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareDEVsub2slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuflamericaMedium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareDEVsub2slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuflamericaMedium-high and high-technology.pdf} }\caption[Leading manufacturers in developing regions of latin America and the Caribbean per technological intensity (shares in per cent)]{Leading manufacturers in developing regions of latin America and the Caribbean per technological intensity (shares in per cent)}\label{fig:c05-indshareDEVsub2slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{asia-and-pacific-excl.-china}{%
+\subsection{Asia and Pacific (excl. China)}\label{asia-and-pacific-excl.-china}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2900.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareDEVsub3slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuf900Low-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareDEVsub3slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuf900Medium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareDEVsub3slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManuf900Medium-high and high-technology.pdf} }\caption[Leading manufacturers in development countries in Eastern Asia per technological intensity (shares in per cent)]{Leading manufacturers in development countries in Eastern Asia per technological intensity (shares in per cent)}\label{fig:c05-indshareDEVsub3slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{europe}{%
+\subsection{Europe}\label{europe}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/ISIC2eurd.pdf} \end{marginfigure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\vspace*{\fill}
+
+\begin{figure*}
+\subfloat[Low-technology\label{fig:c05-indshareDEVsub4slope-1}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufeurdLow-technology.pdf} }\subfloat[Medium-technology\label{fig:c05-indshareDEVsub4slope-2}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufeurdMedium-technology.pdf} }\newline\subfloat[Medium-high and high-technology\label{fig:c05-indshareDEVsub4slope-3}]{\includegraphics[width=0.49\linewidth]{./fig/LeadManufeurdMedium-high and high-technology.pdf} }\caption[Leading manufacturers in developing countries of Europe per technological intensity (shares in per cent)]{Leading manufacturers in developing countries of Europe per technological intensity (shares in per cent)}\label{fig:c05-indshareDEVsub4slope}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\hypertarget{structtrans}{%
+\chapter{Structural transformation}\label{structtrans}}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Historical trends and recent developments in structural transformation indicators
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Share of MVA in GDP
+  \item
+    MVA per capita
+  \item
+    Share of MHT in total manufacturing
+  \end{itemize}
+\item
+  Emphasis on special groups: LDCs, LLDCs, SIDS, etc.
+\end{itemize}
+
+\vspace*{\fill}
+
+Lorem ipsum dolor sit amet,
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/boxplot_mvash_WOR.pdf} \caption[MVA share]{MVA share}\label{fig:c06-mvash-boxplot-world}
+\end{figure*}
+
+\pagebreak
+
+\clearpage\pagebreak
+
+\hypertarget{manufacturing-value-added-per-capita-1}{%
+\section{Manufacturing value added per capita}\label{manufacturing-value-added-per-capita-1}}
+
+~
+\marginnote{\begin{center}{\Huge \color{unidoblue} \faArrowCircleUp 60\% \faArrowCircleUp \newline from 1990 to 2020}\end{center}}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/Slope_mvapc_GROUP_INDDEV1_years_3.pdf} \caption[MVA per capita]{MVA per capita}\label{fig:c06-mvapc-inddev3}
+\end{marginfigure}
+
+\vspace*{\fill}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/boxplot_mvapc_WOR.pdf} \caption[Sample Figure]{Sample Figure}\label{fig:c06-mvapc-box-wor}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\begin{figure*}
+\subfloat[IND\label{fig:c06-mvapc-box-groups-1}]{\includegraphics[width=0.49\linewidth,height=0.49\textheight]{./fig/boxplot_mvapc_IND.pdf} }\subfloat[DEV\label{fig:c06-mvapc-box-groups-2}]{\includegraphics[width=0.49\linewidth,height=0.49\textheight]{./fig/boxplot_mvapc_DEV.pdf} }\newline\subfloat[EIE\label{fig:c06-mvapc-box-groups-3}]{\includegraphics[width=0.49\linewidth,height=0.49\textheight]{./fig/boxplot_mvapc_EIE.pdf} }\subfloat[DEVOT\label{fig:c06-mvapc-box-groups-4}]{\includegraphics[width=0.49\linewidth,height=0.49\textheight]{./fig/boxplot_mvapc_DEVOT.pdf} }\newline\subfloat[LDC\label{fig:c06-mvapc-box-groups-5}]{\includegraphics[width=0.49\linewidth,height=0.49\textheight]{./fig/boxplot_mvapc_LDC.pdf} }\caption[MVA per capita]{MVA per capita}\label{fig:c06-mvapc-box-groups}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\begin{figure*}
+\subfloat[SADC\label{fig:c06-mvapc-groups-slope-1}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_SADC_years_2.pdf} }\subfloat[SAARC\label{fig:c06-mvapc-groups-slope-2}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_SAARC_years_2.pdf} }\subfloat[PACD\label{fig:c06-mvapc-groups-slope-3}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_PACD_years_2.pdf} }\newline\subfloat[LDCAS\label{fig:c06-mvapc-groups-slope-4}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_LDCAS_years_2.pdf} }\subfloat[ECOWAS\label{fig:c06-mvapc-groups-slope-5}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_ECOWAS_years_2.pdf} }\subfloat[ASEAN\label{fig:c06-mvapc-groups-slope-6}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_ASEAN_years_2.pdf} }\newline\subfloat[CAMER\label{fig:c06-mvapc-groups-slope-7}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_CAMER_years_2.pdf} }\subfloat[CASIA\label{fig:c06-mvapc-groups-slope-8}]{\includegraphics[width=0.33\linewidth]{./fig/Slope_mvapc_CASIA_years_2.pdf} }\caption[MVA per capita]{MVA per capita}\label{fig:c06-mvapc-groups-slope}
+\end{figure*}
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\hypertarget{indicators}{%
+\chapter{Indicators on Inclusive and Sustainable Industrial Development}\label{indicators}}
+
+\textbf{Proposed content by Fernando}
+
+\begin{itemize}
+\tightlist
+\item
+  Women and men in industry
+\item
+  Small firms in manufacturing productions
+\item
+  Environmental indicators
+\end{itemize}
+
+\vspace*{\fill}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/Scatter_CO2_MVA_GROUP_INC_2017.pdf} \caption[CO2 emissions and MVA per capita in 2017]{Carbon dioxide emissions in 2017 per unit of manufacturing value added and related to MVA per capita (at constant 2015 USD)}\label{fig:c07-scatter-co2}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{co2-emissions}{%
+\section{CO2 emissions}\label{co2-emissions}}
+
+~
+\marginnote{{\Large Worlds {\color{unidoblue} CO2 emissions from fuel combustion} (measured in million tons) from \newline} {\LARGE\color{unidoblue} 2001 to 2017}}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-108-1.pdf} \end{marginfigure}
+\marginnote{\begin{center}{\Huge \color{unidoblue} \faArrowCircleUp 59\% \faArrowCircleUp}\end{center}} 
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-109-1.pdf} \end{marginfigure}
+
+Loreipsum \ldots{}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/CO2_Slope.pdf} \end{marginfigure}
+
+\vspace*{\fill}
+
+\begin{flushright}\includegraphics[width=0.65\linewidth]{./fig/CO2_Slope_DEVregionsMDG.pdf} \end{flushright}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/./boxplot_EN_ATM_CO2MVA_WOR.pdf} \caption[CO2 emissions per unit of manufacturing value added]{Carbon dioxide emissions per unit of manufacturing value added (kilogrammes of CO2 per constant 2015 USD)}\label{fig:c07-co2mva}
+\end{figure*}
+
+\pagebreak
+
+\hypertarget{small-firms-in-manufacturing-production}{%
+\section{Small firms in manufacturing production}\label{small-firms-in-manufacturing-production}}
+
+~
+\marginnote{{\Huge \color{unidoblue} \faIcon{industry}  \faIcon{industry}  \faIcon{industry}  \faIcon{industry} \faIcon{industry}}}
+
+Lore ipsum\ldots{}
+
+\marginnote{ 
+ 
+Analysis based on limited availability of country data on small-scale businesses:
+}
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/Count_bar_NV_IND_SSIS_GROUP_INDDEV1.pdf} \end{marginfigure}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/./boxplot_NV_IND_SSIS_WOR.pdf} \caption[Proportion of small-scale industries]{Proportion of small-scale industries in total industry value added (limited amount of available country data)}\label{fig:c07-small-box1}
+\end{figure*}
+
+\clearpage\pagebreak
+
+\hypertarget{employment-in-manufacturing}{%
+\section{Employment in manufacturing}\label{employment-in-manufacturing}}
+
+~
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-115-1.pdf} \end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{YB-2021-addendum_files/figure-latex/unnamed-chunk-116-1.pdf} \end{marginfigure}
+
+Lore ipsum\ldots{}
+
+\marginnote{ 
+ 
+Analysis based on limited availability of country data on employment:
+}
+\begin{marginfigure}
+\includegraphics[width=1\linewidth]{./fig/Count_bar_SL_TLF_MANF_GROUP_INDDEV1.pdf} \end{marginfigure}
+
+\vspace*{\fill}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/./boxplot_SL_TLF_MANF_WOR.pdf} \caption[Manufacturing employment as a proportion of total employment]{Manufacturing employment as a proportion of total employment (limited amount of available country data)}\label{fig:c07-emp1}
+\end{figure*}
+
+\clearpage\pagebreak
+\ChapterEndPage
+\pagebreak
+
+\pagebreak
+\ChapterBeginPage
+\pagebreak
+
+\hypertarget{appendix}{%
+\chapter{Appendix}\label{appendix}}
+
+\hypertarget{country-classification-by-development-stage}{%
+\section{Country classification by development stage}\label{country-classification-by-development-stage}}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/classdefmap.png} \caption[Country classification by development stage]{Country classification by development stage}\label{fig:c99-classdefmap}
+\end{figure*}
+
+.
+
+\pagebreak
+
+\begin{table}[!h]
+
+\caption{\label{tab:c99-INDtab}Industrialized Economies}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{lll}
+\toprule
+Andorra & China, Hong Kong SAR & New Caledonia\\
+Australia & Hungary & New Zealand\\
+Austria & Iceland & Norway\\
+Bahrain & Ireland & Poland\\
+Belgium & Israel & Portugal\\
+Bermuda & Italy & Puerto Rico\\
+British Virgin Islands & Japan & Qatar\\
+Belarus & Republic of Korea & Russian Federation\\
+Canada & Kuwait & San Marino\\
+Cayman Islands & Latvia & Singapore\\
+Chile & Liechtenstein & Slovakia\\
+China, Taiwan Province & Lithuania & Slovenia\\
+Czechia & Luxembourg & Spain\\
+Denmark & China, Macao SAR & Sweden\\
+Estonia & Malaysia & Switzerland\\
+Finland & Malta & Trinidad and Tobago\\
+France & Monaco & United Arab Emirates\\
+French Polynesia & Netherlands & Turks and Caicos Islands\\
+Germany & Curaçao & United Kingdom\\
+Greenland & Aruba & United States of America\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+
+\caption{\label{tab:c99-EIEtab}Emerging Industrial Economies <incl. China>}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{lll}
+\toprule
+Argentina & Indonesia & Viet Nam\\
+Bosnia and Herzegovina & Iran (Islamic Republic of) & South Africa\\
+Brazil & Kazakhstan & Suriname\\
+Brunei Darussalam & Jordan & Thailand\\
+Bulgaria & Mauritius & Tunisia\\
+Sri Lanka & Mexico & Turkey\\
+China & Oman & Ukraine\\
+Colombia & Panama & North Macedonia\\
+Costa Rica & Peru & Egypt\\
+Croatia & Philippines & Uruguay\\
+Cyprus & Romania & Venezuela (Bolivarian Republic of)\\
+Greece & Saudi Arabia & \\
+India & Serbia & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+
+\caption{\label{tab:c99-DEVOTtab}Other Developing Economies}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{lll}
+\toprule
+Albania & Georgia & Vanuatu\\
+Algeria & State of Palestine & Nicaragua\\
+Antigua and Barbuda & Ghana & Nigeria\\
+Azerbaijan & Grenada & Marshall Islands\\
+Bahamas & Guatemala & Palau\\
+Armenia & Guyana & Pakistan\\
+Barbados & Honduras & Papua New Guinea\\
+Bolivia (Plurinational State of) & Iraq & Paraguay\\
+Botswana & Côte d'Ivoire & Saint Kitts and Nevis\\
+Belize & Jamaica & Anguilla\\
+Cameroon & Kenya & Saint Lucia\\
+Cabo Verde & Democratic People's Rep of Korea & Saint Vincent and the Grenadines\\
+Congo & Kyrgyzstan & Seychelles\\
+Cook Islands & Lebanon & Zimbabwe\\
+Cuba & Libya & Eswatini\\
+Dominica & Maldives & Syrian Arab Republic\\
+Dominican Republic & Mongolia & Tajikistan\\
+Ecuador & Republic of Moldova & Tonga\\
+El Salvador & Montenegro & Turkmenistan\\
+Equatorial Guinea & Montserrat & Uzbekistan\\
+Fiji & Morocco & Samoa\\
+Gabon & Namibia & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+
+\caption{\label{tab:c99-LDCtab}Least Developed Countries}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{lll}
+\toprule
+Afghanistan & Gambia & Rwanda\\
+Angola & Kiribati & Sao Tome and Principe\\
+Bangladesh & Guinea & Senegal\\
+Bhutan & Haiti & Sierra Leone\\
+Solomon Islands & Lao People's Dem Rep & Somalia\\
+Myanmar & Lesotho & South Sudan\\
+Burundi & Liberia & Sudan\\
+Cambodia & Madagascar & Togo\\
+Central African Republic & Malawi & Tuvalu\\
+Chad & Mali & Uganda\\
+Comoros & Mauritania & United Republic of Tanzania\\
+Democratic Rep of the Congo & Mozambique & Burkina Faso\\
+Benin & Nepal & Yemen\\
+Ethiopia & Niger & Zambia\\
+Eritrea & Guinea-Bissau & \\
+Djibouti & Timor-Leste & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+.
+\clearpage\pagebreak
+
+\hypertarget{countries-by-major-regions}{%
+\section{Countries by major regions}\label{countries-by-major-regions}}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/classmapregions.png} \caption[Country classification by major regions]{Country classification by major regions}\label{fig:c99-classmapregions}
+\end{figure*}
+
+.
+\pagebreak
+
+\hypertarget{country-classification-by-income-group}{%
+\section{Country classification by income group}\label{country-classification-by-income-group}}
+
+\begin{figure*}
+\includegraphics[width=1\linewidth]{./fig/classmapincome.png} \caption[Country classification by income group]{Country classification by income group}\label{fig:c99-classmapincome}
+\end{figure*}
+
+.
+\pagebreak
+
+\hypertarget{isic-rev.-4-divisions-and-technological-intensity}{%
+\section{ISIC Rev.~4 divisions and technological intensity}\label{isic-rev.-4-divisions-and-technological-intensity}}
+
+\begin{table}[!h]
+
+\caption{\label{tab:c99-ISICtab}ISIC Rev. 4 divisions and technological intensity}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{6cm}l}
+\toprule
+Code & Description & Technology\\
+\midrule
+C & Manufacturing & \\
+10 & Manufacture of food products & Low-technology\\
+11 & Manufacture of beverages & Low-technology\\
+12 & Manufacture of tobacco products & Low-technology\\
+13 & Manufacture of textiles & Low-technology\\
+14 & Manufacture of wearing apparel & Low-technology\\
+15 & Manufacture of leather and related products & Low-technology\\
+16 & Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials & Low-technology\\
+17 & Manufacture of paper and paper products & Low-technology\\
+18 & Printing and reproduction of recorded media & Low-technology\\
+19 & Manufacture of coke and refined petroleum products & Low-technology\\
+20 & Manufacture of chemicals and chemical products & Medium-high and high-technology\\
+21 & Manufacture of basic pharmaceutical products and pharmaceutical preparations & Medium-high and high-technology\\
+22 & Manufacture of rubber and plastics products & Medium-technology\\
+23 & Manufacture of other non-metallic mineral products & Medium-technology\\
+24 & Manufacture of basic metals & Medium-technology\\
+25 & Manufacture of fabricated metal products, except machinery and equipment & Low-technology\\
+26 & Manufacture of computer, electronic and optical products & Medium-high and high-technology\\
+27 & Manufacture of electrical equipment & Medium-high and high-technology\\
+28 & Manufacture of machinery and equipment n.e.c. & Medium-high and high-technology\\
+29 & Manufacture of motor vehicles, trailers and semi-trailers & Medium-high and high-technology\\
+30 & Manufacture of other transport equipment & Medium-high and high-technology\\
+31 & Manufacture of furniture & Low-technology\\
+32 & Other manufacturing & Medium-technology\\
+33 & Repair and installation of machinery and equipment & Medium-technology\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+.
+\pagebreak
+
+\pagebreak
+\BookEndPage
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

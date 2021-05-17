@@ -1,0 +1,28 @@
+book_filename: "YB-2021-addendum"
+output_dir: "output"
+delete_merged_file: true
+language:
+  label:
+    fig: "Figure "
+    tab: "Table "
+  ui:
+    edit: "Edit"
+    chapter_name: "Chapter "
+
+rmd_files: [
+  "index.Rmd",
+  "01-intro.Rmd",
+  "02-recent-trends.Rmd",
+  "03-world-manufacturing-distribution.Rmd",
+  "04-geographical-analysis.Rmd",
+  "05-industrial-sectors.Rmd",
+  "06-structural-transformation.Rmd",
+  "07-indicators.Rmd",
+  #"98-references.Rmd",
+  "99-appendix.Rmd"
+]
+
+before_chapter_script: "_common_chapter.R"
+params: 
+  show_kable_f: 
+    value: 'latex'

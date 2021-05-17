@@ -1,0 +1,57 @@
+tufte::tufte_book:
+  toc: true
+  includes:
+    in_header: preamble_tufte.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  template: null
+  pandoc_args: --top-level-division=chapter
+  toc_depth: 3
+  keep_tex: true
+bookdown::tufte_book2:
+  toc: true
+  includes:
+    in_header: preamble_tufte.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  template: null
+  pandoc_args: --top-level-division=chapter
+  toc_depth: 3
+  keep_tex: true
+bookdown::epub_book: default
+msmbstyle::msmb_html_book:
+    css: style_unido.css
+    highlight: tango
+    toc: TRUE
+    toc_depth: 1
+    split_by: chapter
+    split_bib: no
+    margin_references: FALSE
+bibliography: msmbstyle-ex.bib
+bookdown::gitbook:
+  css: style_unido.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href=https://www.unido.org/statistics'><img src='../img/Unido_EN_Light_Blue_r.png'></a></li>
+      after: |
+        <li><a href="https://stat.unido.org" target="blank"><p style="color:#009CDC";>UNIDO Statistics Data Portal</p></a></li>
+    sharing:
+      facebook: no
+      github: no
+      twitter: yes
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+bookdown::tufte_html_book:
+    config:
+      toc: 
+        collapse: section
+    css: [style_unido.css]
+    split_by: chapter
+    highlight: tango
+    toc_depth: 1
+    margin_references: FALSE
+new_session: yes

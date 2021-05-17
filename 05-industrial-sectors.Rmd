@@ -1,0 +1,53 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, eval = T, echo=FALSE, warning=FALSE, message=FALSE}
+chapter_index <- "05"
+if (exists(paste0("fig_create_", chapter_index))) fig_create <- get(paste0("fig_create_", chapter_index)) else fig_create <- TRUE
+if (exists(paste0("fig_fromfile_", chapter_index))) fig_fromfile <- get(paste0("fig_fromfile_", chapter_index)) else fig_fromfile <- FALSE
+
+if (exists(paste0("islatexout"))) islatexout <- get(paste0("islatexout")) else islatexout <- FALSE
+```
+
+# Industrial sectors {#indsec}
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\vspace*{-1.5cm}")
+```
+
+**Proposed content by Fernando**
+
+- Manufactured products by level of technological content
+    - Shares in total manufacturing production and trade through time
+    - Contributions by main country groups
+    - Highlights (for example, main contributions by category of product, countries that have moved the most in the technological content of their products)
+- Manufacturing industries (2-digit ISIC)
+    - Shares in total manufacturing through time
+    - Contributions by main country groups
+    - Highlights (for example, leading economies by industry, countries that have moved the most in specific industries)
+    - Analysis of recent events, shocks, policies that have affected specific industries
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\vspace*{\\fill}")
+```
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = FALSE, fig.margin = FALSE, fig.cap="Sample Figure"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+``` 
+
+```{r, results='asis', eval=(knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'), echo = FALSE}
+cat('\\pagebreak')
+```
+
+```{r, child = '_common_samplesectionpage.Rmd'}
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat('\\clearpage\\pagebreak\n')
+cat("\\ChapterEndPage\n")
+cat('\\pagebreak\n')
+```

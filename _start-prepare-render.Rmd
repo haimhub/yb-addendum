@@ -1,0 +1,136 @@
+---
+title: "start_prepare_render"
+author: UNIDO STAT
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Intro
+
+Please follow the steps below to compile the book.
+
+# Installation of the required packages
+
+```{r echo=TRUE, eval=TRUE}
+source("./_common_libraries.R")
+```
+
+
+# Book generation
+
+## PDF
+```{r, eval = FALSE, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+#Define if to create figures during run or include already created images from ./fig
+  # out_device_fig_prefer = "pdf" or "png" both work for latex;  pdf better resolution, png figures make final pdf bigger
+  # fig_create = TRUE or FALSE - create or do not create figures new when book is rendered
+  # fig_fromfile = TRUE or FALSE - if TRUE created figures are saved in folder in in preferred out_device and read for book            compilation; if FALSE: integrated markdown chunk feature is used for inclusion of graphics in the book
+#for final run always fig_create = F, otherwise some figures double
+params <- list(
+               fig_create_02 = F,
+               fig_fromfile_02 = TRUE,
+  
+               fig_create_03 = F,
+               fig_fromfile_03 = TRUE,
+               
+               fig_create_04 = F,
+               fig_fromfile_04 = TRUE,
+               
+               fig_create_05 = F,
+               fig_fromfile_05 = TRUE,
+               
+               fig_create_06 = F,
+               fig_fromfile_06 = TRUE,
+               
+               fig_create_07 = F,
+               fig_fromfile_07 = TRUE,
+               
+               fig_create_99 = F,
+               fig_fromfile_99 = TRUE,
+               
+               out_device_fig_prefer = "pdf"
+               )
+#source("./_common_start.R")
+###render book
+bookdown::render_book(
+  input = "index.Rmd",
+  output_format = "bookdown::tufte_book2",
+  output_file = "YB-2021-addendum", #"YB-2021-addendum_V2021-04-30"
+  output_dir = "output",
+  new_session = FALSE,
+  config_file = "_bookdown.yml",
+  output_yaml = "_output.yml",
+  clean = TRUE,
+  ## run params code line above
+  params = params,
+  ##
+)
+###open rendered pdf
+shell(paste(shQuote("C:\\Program Files\\RStudio\\bin\\sumatra\\SumatraPDF.exe"), file.path("output", paste0("YB-2021-addendum", ".pdf"))), wait = FALSE)
+
+```
+
+## HTML
+```{r, eval = F, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+#Define if to create figures during run or include already created images from ./fig
+params <- list(
+               fig_create_02 = T,
+               fig_fromfile_02 = TRUE,
+  
+               fig_create_03 = T,
+               fig_fromfile_03 = TRUE,
+               
+               fig_create_04 = T,
+               fig_fromfile_04 = TRUE,
+               
+               fig_create_05 = T,
+               fig_fromfile_05 = TRUE,
+               
+               fig_create_06 = T,
+               fig_fromfile_06 = TRUE,
+               
+               fig_create_07 = T,
+               fig_fromfile_07 = TRUE,
+               
+               fig_create_99 = T,
+               fig_fromfile_99 = TRUE,
+               
+               out_device_fig_prefer = "png"
+               )
+
+bookdown::render_book(
+  input = "index.Rmd",
+  output_format = "bookdown::tufte_html_book",
+  output_dir = "output",
+  new_session = FALSE,
+  config_file = "_bookdown.yml",
+  output_yaml = "_output.yml",
+  clean = TRUE,
+  ## run params code line above
+  params = params
+  ##
+)
+
+#bookdown::render_book('index.Rmd',output_format = "msmbstyle::msmb_html_book", output_dir = 'msmb_example', clean_envir=FALSE, clean = TRUE, params = params)
+
+#!!!!!!!CHANGE variable show_kable_f <- "html" in index.Rmd!!!!!!!!!!
+#bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean_envir=FALSE, clean = TRUE, params = params)
+#bookdown::clean_book()
+
+```
+
+... or an e-book.
+
+```{r echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+bookdown::render_book("index.Rmd", output_format = "bookdown::epub_book", clean_envir=FALSE)
+```
+
+
+```{r backup, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+#create backup for structure files
+backup_folder <- file.path("BackupStructure", paste0("V", Sys.Date()))
+if (!dir.exists(backup_folder)) dir.create(backup_folder)
+file.copy(from = list.files(pattern = "\\.Rmd$|\\.R$|\\.yml|\\.css$|\\.tex$|\\.txt$"), 
+          to = backup_folder,
+          overwrite = TRUE)
+```

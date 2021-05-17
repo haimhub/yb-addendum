@@ -1,0 +1,110 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, eval = T, echo=FALSE, warning=FALSE, message=FALSE}
+chapter_index <- "01"
+if (exists(paste0("fig_create_", chapter_index))) fig_create <- get(paste0("fig_create_", chapter_index)) else fig_create <- TRUE
+if (exists(paste0("fig_fromfile_", chapter_index))) fig_fromfile <- get(paste0("fig_fromfile_", chapter_index)) else fig_fromfile <- FALSE
+
+if (exists(paste0("islatexout"))) islatexout <- get(paste0("islatexout")) else islatexout <- FALSE
+```
+
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\ChapterBeginPage\n")
+cat('\\pagebreak\n')
+```
+
+# Introduction {#intro}
+
+INTERNAL in draft this draft version, a short description of possible figure and text positions in this template:
+
+
+
+* margin figure:
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = TRUE, fig.cap="Margin Figure"}
+rel_file_name <- "GROUP_WORLDwintri.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat('\\vspace{1.5cm}\n')
+```
+
+* standard text: 
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+* Margin text
+`r margin_note("This is a margin note. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.")`
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat('\\vspace{0.25cm}\n')
+```
+
+* standard sized figure:
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = FALSE, fig.cap="This is a standard sized figure.", out.width="100%" }
+rel_file_name <- "MVA2020share.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+* full width figure:
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = TRUE, fig.cap="This is a full width figure", out.width="100%"}
+rel_file_name <- "ISIC2devxreg.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+#cat("\\vspace*{\\fill}")
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+#cat('\\pagebreak')
+```
+
+## Proposed structure (mail Fernando) {.unlisted .unnumbered}
+(@) Introduction
+(@) Recent trends in world manufacturing 
+- Historical evolution of global manufacturing (growth rates, MVA per capita, share of GDP – long time series)
+- Recent trends (growth trends, share of GDP, incl. nowcasting and possibly quarterly/monthly IIP data)
+- Employment in manufacturing (and productivity)
+- Trade of manufactured products
+- Analysis of recent events, shocks, developments, policies affecting global manufacturing
+(@) The distribution of manufacturing in the world 
+- Distribution of world total MVA (current and evolution through time)
+    - By industrialization groups
+    - By major geographical areas (continents)
+    - By income groups
+    - By “special” groups (LLDCS, SIDS, subregional bodies, trade blocks, etc.)
+- Main production centers (current and evolution)
+(@) Geographical analysis 
+- Recent trends and main changes (total MVA & MVA per capita, levels and growth rates), best performers, etc. by geographical regions (mostly in production, but also trade)
+(@) Industrial sectors 
+- Manufactured products by level of technological content
+    - Shares in total manufacturing production and trade through time
+    - Contributions by main country groups
+    - Highlights (for example, main contributions by category of product, countries that have moved the most in the technological content of their products)
+- Manufacturing industries (2-digit ISIC)
+    - Shares in total manufacturing through time
+    - Contributions by main country groups
+    - Highlights (for example, leading economies by industry, countries that have moved the most in specific industries)
+    - Analysis of recent events, shocks, policies that have affected specific industries
+(@) Structural transformation 
+- Historical trends and recent developments in structural transformation indicators
+    - Share of MVA in GDP
+    - MVA per capita
+    - Share of MHT in total manufacturing
+- Emphasis on special groups: LDCs, LLDCs, SIDS, etc.
+(@) Indicators on ISID (evolving list) 
+- Women and men in industry
+- Small firms in manufacturing productions
+- Environmental indicators

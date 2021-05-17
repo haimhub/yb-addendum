@@ -1,0 +1,56 @@
+--- 
+title: "International Yearbook of Industrial Statistics 2021"
+subtitle: "Addendum - Visual companion" 
+author: "UNIDO Statistics Division (Status: `r Sys.Date()`, `r Sys.info()['login'][[1]]`)"
+date: "`r Sys.Date()`"
+output: html_document
+colorlinks: yes
+biblio-style: apalike
+description: Describe in short
+#documentclass: tufte-book
+#geometry: left=1.5in, right=1.5in, top=1.25in, bottom=1.25in
+graphics: yes
+link-citations: yes
+lof: no
+lot: no
+bibliography:
+- book.bib
+- packages.bib
+site: bookdown::bookdown_site
+classoption: openany, nofonts
+always_allow_html: yes
+urlcolor: blue
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
+```
+
+```{r include=FALSE}
+#load overall parameters, bring data, set visual identity, ...
+source("./_common_start.R")
+```
+
+<!-- # About this publication {-} -->
+<!-- The International Yearbook of Industrial Statistics published by UNIDO contains a wealth of information on the level, structure and growth of world manufacturing. Data are presented at the most detailed level of 155 manufacturing industries. While these data are used by researchers to carry out in-depth economic analyses of structural transformation, many users have requested more concise statistical information on overall growth trends and the structure of global manufacturing. -->
+<!-- This publication serves as an addendum to the International Yearbook of Industrial Statistics 2021 and provides some important statistical information on global manufacturing. The publication is compiled from data published in the Yearbook and other data products of UNIDO Statistics. -->
+<!-- The publication is compiled and disseminated by UNIDO Statistics. -->
+
+<!-- ```{r, results='asis', eval=(knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'), echo = FALSE} -->
+<!-- cat('\\vspace*{\\fill}') -->
+<!-- ``` -->
+
+<!-- >Copyright © 2021 United Nations Industrial Development Organization -->
+<!-- The designations employed and the presentation of the material in this document do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations Industrial Development Organization (UNIDO) concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries, or its economic system or degree of development. -->
+<!-- Designations such as „developed“, „industrialized“ and „developing“ are intended for statistical convenience and do not necessarily express a judgment about the stage reached by a particular country or area in the development process. Mention of firm names or commercial products does not constitute an endorsement by UNIDO. -->
+<!-- Material in this publication may be freely quoted or reprinted, but acknowledgement is requested, together with a copy of the publication containing the quotation or reprint. -->
+<!-- For reference and citation, please use: United Nations Industrial Development Organization, 2021. Statistical outlook on world manufacturing 2021.Vienna. -->
+
+
+<!-- # Acknowledgments {-} -->
+
+<!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->

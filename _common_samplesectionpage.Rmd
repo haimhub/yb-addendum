@@ -1,0 +1,73 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Sample (sub)section page
+&nbsp;
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = TRUE, fig.cap="(Optional) Margin Figure"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+`r margin_note("Optional margin note or another margin figure. Lorem ipsum dolor sit amet, consetetur sadipscing elitr...")`
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = TRUE, fig.cap="(Optional) Margin Figure or Margin Text"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\vspace*{\\fill}")
+```
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = TRUE, fig.margin = FALSE, fig.cap="Sample Figure"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+```{r, results='asis', eval=(knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'), echo = FALSE}
+cat('\\clearpage')
+cat('\\pagebreak')
+```
+
+## ...
+&nbsp;
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = TRUE, fig.cap="(Optional) Margin Figure"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+`r margin_note("Optional margin note or another margin figure. Lorem ipsum dolor sit amet, consetetur sadipscing elitr...")`
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.margin = TRUE, fig.cap="(Optional) Margin Figure or Margin Text"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+```{r, results='asis', eval=(islatexout), echo = FALSE}
+cat("\\vspace*{\\fill}")
+```
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+```{r, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.fullwidth = TRUE, fig.margin = FALSE, fig.cap="Sample Figure"}
+rel_file_name <- "sample_image.png"
+rel_file <- file.path(rel_img_path, rel_file_name)
+knitr::include_graphics(rel_file)
+```
+
+```{r, results='asis', eval=(knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'), echo = FALSE}
+cat('\\clearpage')
+cat('\\pagebreak')
+```
